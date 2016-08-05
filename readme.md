@@ -2,9 +2,9 @@
 
 #### By _**George Olson**_
 
-## _Description_
+## Description
 
-_Find a GitHub user's profile and their repositories!._
+_Find a GitHub user's profile and their repositories!_
 
 ## Specifications
 
