@@ -21,25 +21,29 @@
         <h3 class="status"></h3>
       </div>
 
-      <div id="response">
-        <h3 class="username"></h3>
-        <h4 class="page-header">Username: <span id="username"></span></h4>
-        <p><a id="link" target="_blank" href="">Link to profile</a></p>
+      <div id="response" class="row">
+        <div class="col-md-7">
+          <div class="profile">
+              <img src="" class="pull-right" id="avatar">
+              <h4 class="page-header">Username: <span id="username"></span></h4>
+              <p><a id="link" target="_blank" href="">Link to profile</a></p>
 
-        <ul>
-          <li>You have <span id="followers"></span> follower(s).</li>
-          <li>You are following <span id="following"></span> user(s).</li>
-        </ul>
+              <ul>
+                <li>You have <span id="followers"></span> follower(s).</li>
+                <li>You are following <span id="following"></span> user(s).</li>
+              </ul>
+          </div>
 
-        <form id="getrepos">
-          <button type="button" class="btn btn-primary">Get repositories</button>
-        </form>
+          <form id="getrepos">
+            <button type="button" class="btn btn-primary">Get repositories</button>
+          </form>
 
-        <div id="repo-result">
-          <h4 class="page-header">Repositories:</h4>
-          <p><span id="repo-number"></span> repositories found.</p>
-          <ul id="repositories" class="list-group">
-          </ul>
+          <div id="repo-result">
+            <h4 class="page-header">Repositories:</h4>
+            <p><span id="repo-number"></span> repositories found.</p>
+            <ul id="repositories" class="list-group">
+            </ul>
+          </div>
         </div>
       </div>
     </div>

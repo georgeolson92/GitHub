@@ -1,6 +1,7 @@
 $red :  #ff3333;
 $blue : #0039e6;
 $brightblue : #0066cc;
+$grey : #eee;
 
 a {
   color: $blue;
@@ -20,6 +21,30 @@ a {
 
 .error {
   color: $red;
+}
+
+#avatar {
+  max-height: 140px;
+}
+
+.profile {
+  background-color: $grey;
+}
+
+.profile p {
+  padding: 0px 10px;
+}
+
+.profile h4 {
+  padding: 10px;
+}
+
+.profile ul {
+  padding: 0px 10px 10px 25px;
+}
+
+.response .page-header {
+  margin: 0px;
 }
 
 .btn-primary {

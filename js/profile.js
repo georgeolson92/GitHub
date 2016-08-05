@@ -13,6 +13,7 @@ Profile.prototype.getProfile = function(userName) {
     }
     var profileUrl = "https://github.com/" + userName;
     $("#username").text(userName);
+    $("#avatar").attr("src", response.avatar_url);
     $("#link").attr("href", profileUrl);
     $("#following").text(response.following);
     $("#followers").text(response.followers);
