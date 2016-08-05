@@ -34,7 +34,7 @@ Profile.prototype.getRepos = function(userName) {
       {
         responseArray[i].description = "";
       }
-      $("#repositories").append("<li class='list-group-item'><a href='"+ responseArray[i].html_url + "'>" + responseArray[i].name + "</a><p>" + responseArray[i].description + "</p></li>");
+      $("#repositories").append("<li class='list-group-item'><a target='_blank' href='"+ responseArray[i].html_url + "'>" + responseArray[i].name + "</a><p>" + responseArray[i].description + "</p></li>");
     }
     $("#repo-result").fadeIn();
   }).fail(function(error){

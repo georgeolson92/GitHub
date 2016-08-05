@@ -4,7 +4,7 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <link rel="stylesheet" href="build/css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -14,7 +14,7 @@
       <form id="github">
         <label for="user">Enter username:</label>
         <input name="user" id="user" type="text">
-        <button type="button">Submit</button>
+        <button type="button" class="btn btn-primary">Submit</button>
       </form>
 
       <div id="status">
@@ -24,7 +24,7 @@
       <div id="response">
         <h3 class="username"></h3>
         <h4 class="page-header">Username: <span id="username"></span></h4>
-        <p><a id="link" href="">Link to profile</a></p>
+        <p><a id="link" target="_blank" href="">Link to profile</a></p>
 
         <ul>
           <li>You have <span id="followers"></span> follower(s).</li>
@@ -32,7 +32,7 @@
         </ul>
 
         <form id="getrepos">
-          <button type="button">Get repositories</button>
+          <button type="button" class="btn btn-primary">Get repositories</button>
         </form>
 
         <div id="repo-result">

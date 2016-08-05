@@ -1,0 +1,28 @@
+$red :  #ff3333;
+$blue : #0039e6;
+$brightblue : #0066cc;
+
+a {
+  color: $blue;
+}
+
+#response {
+  display: none;
+}
+
+#repo-result {
+  display: none;
+}
+
+.list-group-item a{
+  font-size: 1.5em;
+}
+
+.error {
+  color: $red;
+}
+
+.btn-primary {
+  background-color: $brightblue;
+  border: 0px;
+}
