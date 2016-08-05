@@ -9,3 +9,7 @@
 .list-group-item a{
   font-size: 1.5em;
 }
+
+.error {
+  color: red;
+}

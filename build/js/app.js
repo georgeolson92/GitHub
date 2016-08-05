@@ -4,34 +4,52 @@ exports.apiKey = "d7252c12dc1eb8da76c74c6446a2109762113dbe";
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 
-$(document).ready(function() {
-  $("#github button").click(function(){
-    var userName = $("#user").val();
-    $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
-      console.log(response);
+function Profile(){
+}
+
+Profile.prototype.getProfile = function(userName) {
+  $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
+    $(".status").removeClass("error")
+    if(response.name !== null){
       $(".status").text("Success! Thank you, " + response.name + ".");
-      var profileUrl = "https://github.com/" + userName;
-      $("#username").text(userName);
-      $("#link").attr("href", profileUrl);
-      $("#following").text(response.following);
-      $("#followers").text(response.followers);
-      $("#response").fadeIn();
-    }).fail(function(error){
-      console.log(error.responseJSON.message);
-      $(".status").text("Error! Username not found.");
-    });
+    } else if (response.name === null){
+      $(".status").text("Success! Thank you, " + userName + ".");
+    }
+    var profileUrl = "https://github.com/" + userName;
+    $("#username").text(userName);
+    $("#link").attr("href", profileUrl);
+    $("#following").text(response.following);
+    $("#followers").text(response.followers);
+    $("#response").fadeIn();
+  }).fail(function(error){
+    $(".status").text("Error! Username not found.").addClass("error");
+  });
+}
+
+exports.profileModule = Profile;
+
+},{"./../.env":1}],3:[function(require,module,exports){
+var apiKey = require('./../.env').apiKey;
+var Profile = require('./../js/profile.js').profileModule;
+
+$(document).ready(function() {
+  var currentProfileObject = new Profile();
+
+  $("#github button").click(function(){
+    $("#response").hide();
+    $("#repo-result").hide();
+    var userName = $("#user").val();
+    currentProfileObject.getProfile(userName);
   });
 
   $("#getrepos button").click(function(){
     $("#repositories").html("");
     var userName = $("#username").text();
     $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey + '&per_page=1000').then(function(response){
-      console.log(response);
       var responseArray = [];
       for (var index = 0; index < response.length; index += 1) {
         responseArray.push(response[index]);
       }
-      console.log("array = " + responseArray);
       $("#repo-number").text(responseArray.length);
       for (var i = 0; i < responseArray.length; i += 1) {
         if(responseArray[i].description === null)
@@ -47,4 +65,4 @@ $(document).ready(function() {
   });
 });
 
-},{"./../.env":1}]},{},[2]);
+},{"./../.env":1,"./../js/profile.js":2}]},{},[3]);
