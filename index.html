@@ -4,12 +4,44 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <div class="container">
-      <h1>Yo</h1>
+      <h1>See your GitHub info!</h1>
+      <form id="github">
+        <label for="user">Enter username:</label>
+        <input name="user" id="user" type="text">
+        <button type="button">Submit</button>
+      </form>
+
+      <div id="status">
+        <h3 class="status"></h3>
+      </div>
+
+      <div id="response">
+        <h3 class="username"></h3>
+        <h4 class="page-header">Username: <span id="username"></span></h4>
+        <p><a id="link" href="">Link to profile</a></p>
+
+        <ul>
+          <li>You have <span id="followers"></span> follower(s).</li>
+          <li>You are following <span id="following"></span> user(s).</li>
+        </ul>
+
+        <form id="getrepos">
+          <button type="button">Get repositories</button>
+        </form>
+
+        <div id="repo-result">
+          <h4 class="page-header">Repositories:</h4>
+          <p><span id="repo-number"></span> repositories found.</p>
+          <ul id="repositories" class="list-group">
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
